@@ -9,32 +9,39 @@ class Card1 extends StatelessWidget {
   final String chef = 'Ray Wenderlich';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      constraints: const BoxConstraints.expand(width: 350, height: 450),
-      decoration: BoxDecoration(
-        color: Colors.blueGrey.shade100,
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
-      ),
-      child: Stack(
-        children: [
-          Text(category, style: FooderlichTheme.lightTextTheme.bodyText1),
-          Positioned(
-            top: 20,
-            child: Text(title, style: FooderlichTheme.lightTextTheme.headline2),
+    return Center(
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        constraints: const BoxConstraints.expand(width: 350, height: 450),
+        decoration: BoxDecoration(
+          color: Colors.blueGrey.shade100,
+          image: const DecorationImage(
+            image: AssetImage('assets/mag1.png'),
+            fit: BoxFit.cover,
           ),
-          Positioned(
-            bottom: 30,
-            right: 0,
-            child: Text(description,
-                style: FooderlichTheme.lightTextTheme.bodyText1),
-          ),
-          Positioned(
-            bottom: 10,
-            right: 0,
-            child: Text(chef, style: FooderlichTheme.lightTextTheme.bodyText1),
-          ),
-        ],
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+        ),
+        child: Stack(
+          children: [
+            Text(category, style: FooderlichTheme.darkTextTheme.bodyText1),
+            Positioned(
+              top: 20,
+              child:
+                  Text(title, style: FooderlichTheme.darkTextTheme.headline2),
+            ),
+            Positioned(
+              bottom: 30,
+              right: 0,
+              child: Text(description,
+                  style: FooderlichTheme.darkTextTheme.bodyText1),
+            ),
+            Positioned(
+              bottom: 10,
+              right: 0,
+              child: Text(chef, style: FooderlichTheme.darkTextTheme.bodyText1),
+            ),
+          ],
+        ),
       ),
     );
   }

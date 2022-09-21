@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apprenticeship/fooderlich_theme.dart';
-import 'package:flutter_apprenticeship/main.dart';
 import 'author_card.dart';
 
 class Card2 extends StatelessWidget {
@@ -15,11 +14,16 @@ class Card2 extends StatelessWidget {
         ),
         decoration: const BoxDecoration(
             color: Colors.lightBlue,
+            image: DecorationImage(
+                image: AssetImage('assets/mag5.png'), fit: BoxFit.cover),
             borderRadius: BorderRadius.all(Radius.circular(10))),
         child: Column(
           children: [
             const AuthorCard(
-                authorName: 'Mike Katz', title: 'Smoothie Connoisseur'),
+              authorName: 'Mike Katz',
+              title: 'Smoothie Connoisseur',
+              imageProvider: AssetImage('assets/author_katz.jpeg'),
+            ),
             Expanded(
               child: Stack(
                 children: [

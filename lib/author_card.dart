@@ -5,14 +5,14 @@ import 'circle_image.dart';
 class AuthorCard extends StatelessWidget {
   final String authorName;
   final String title;
-  // final ImageProvider imageProvider;
+  final ImageProvider imageProvider;
 
-  const AuthorCard({
-    Key? key,
-    required this.authorName,
-    required this.title,
-    /* required this.imageProvider */
-  }) : super(key: key);
+  const AuthorCard(
+      {Key? key,
+      required this.authorName,
+      required this.title,
+      required this.imageProvider})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class AuthorCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const CircleImage(imageRadius: 28),
+              CircleImage(imageRadius: 28, imageProvider: imageProvider),
               const SizedBox(width: 8),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
